@@ -2,7 +2,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Darwin Core</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="author" content="{{ site.author }}">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.tdwg.org/theme/icons/apple-touch-icon.png">
