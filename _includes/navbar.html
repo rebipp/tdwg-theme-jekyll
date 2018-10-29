@@ -4,37 +4,31 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-md-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ "/" | absolute_url }}">{{ site.navbar.title }}</a>
+                <a class="nav-link" href="{{ '/' | absolute_url }}">Home</a>
             </li>
-            {% for x in site.navbar.left %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ x.href | absolute_url }}">{{ x.text }}</a>
-                </li>
-            {% endfor %}
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ "/" | absolute_url }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ "terms/" | absolute_url }}">Terms</a>
-                </li>
+            {% for page in site.navbar.left %}
+                {% if page.menu %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Guides</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ page.text }}</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ "simple/" | absolute_url }}">Simple Darwin Core</a>
-                        <a class="dropdown-item" href="{{ "text/" | absolute_url }}">Text</a>
-                        <a class="dropdown-item" href="{{ "xml/" | absolute_url }}">XML</a>
-                        <a class="dropdown-item" href="{{ "rdf/" | absolute_url }}">RDF</a>
+                    {% for subpage in page.menu %}
+                        <a class="dropdown-item" href="{{ subpage.href | absolute_url }}">{{ subpage.text }}</a>
+                    {% endfor %}
                     </div>
                 </li>
+                {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ "namespace/" | absolute_url }}">Namespace policy</a>
+                    <a class="nav-link" href="{{ page.href | absolute_url }}">{{ page.text }}</a>
                 </li>
+                {% endif %}
+            {% endfor %}
             </ul>
             <ul class="navbar-nav">
+            {% for page in site.navbar.right %}
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/tdwg/dwc">GitHub</a>
+                    <a class="nav-link" href="{{ page.href | absolute_url }}">{{ page.text }}</a>
                 </li>
+            {% endfor %}
             </ul>
         </nav>
     </div>
