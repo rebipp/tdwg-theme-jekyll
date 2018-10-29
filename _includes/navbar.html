@@ -3,9 +3,12 @@
         <a class="navbar-brand mr-md-3" href="http://www.tdwg.org">TDWG</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-md-auto">
-            {% for x in site.nav %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ "/" | absolute_url }}">{{ site.navbar.title }}</a>
+            </li>
+            {% for x in site.navbar.left %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ x.link | absolute_url }}">{{ x.name }}</a>
+                    <a class="nav-link" href="{{ x.href | absolute_url }}">{{ x.text }}</a>
                 </li>
             {% endfor %}
 
