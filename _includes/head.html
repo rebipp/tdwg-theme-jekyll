@@ -22,4 +22,72 @@
 
     <!-- Feeds -->
     <link rel="alternate" type="application/rss+xml" href={{ '/feed.xml' | absolute_url }}" title="{{ site.title }} RSS feed">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          "name": "Plant-Pollinator Interactions (PPI)",
+          "creator": {
+            "@type": "Organization",
+            "name": "Brazilian Network on Plant-Pollinator Interactions (REBIPP)"
+          },
+          "identifier": "http://rs.rebipp.org.br/ppi/terms/",
+          "url": "http://rs.rebipp.org.br/ppi/terms/",
+          "version": "2021-12-03",
+          "dateModified": "2021-12-03",
+          "description": "The Plant-Pollinator Interactions (PPI) is a vocabulary of terms for transmitting information about plant-pollinator interactions using the Darwin Core standard. This document lists all terms in namespaces currently used in the vocabulary.",
+          "keywords": [
+            "biodiversity",
+            "metadata schema",
+            "pollinator",
+            "pollination"
+          ],
+          "license": "https://creativecommons.org/licenses/by/4.0/",
+          "status": "valid",
+          "distribution": [
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "text/html",
+              "contentUrl": "http://rs.rebipp.org.br/ppi/terms.htm"
+            },
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "text/turtle",
+              "contentUrl": "http://rs.rebipp.org.br/ppi/terms.ttl"
+            },
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "application/rdf+xml",
+              "contentUrl": "http://rs.rebipp.org.br/ppi/terms.rdf"
+            },
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "application/ld+json",
+              "contentUrl": "http://rs.rebipp.org.br/ppi/terms.json"
+            }
+          ],
+          "isAccessibleForFree": true,
+          "contributor": [
+            { "@type": "Person", "name": "José Augusto Salim" },
+            { "@type": "Person", "name": "Antonio Mauro Saravia" },
+            { "@type": "Person", "name": "Paula Zermoglio" },
+            { "@type": "Person", "name": "Kayna Agostini" },
+            { "@type": "Person", "name": "John Wieczorek" },
+            { "@type": "Person", "name": "Debora Pignatari Drucker" },
+            { "@type": "Person", "name": "Pedro Bergamo" },
+            { "@type": "Person", "name": "Filipi Miranda Soares" }
+          ],
+          "citation": {
+            "@type": "CreativeWork",
+            "name": "Related publication",
+            "url": "https://doi.org/10.1093/gigascience/giac043"
+          },
+          "hasPart": {
+            "@type": "CreativeWork",
+            "name": "Version History",
+            "url": "http://rs.rebipp.org.br/ppi/doc/list/2021-12-03"
+          }
+        }
+        </script>
 </head>
